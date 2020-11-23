@@ -1,0 +1,35 @@
+name: Create Azure Static WebApps resources
+on:
+  workflow_dispatch:
+  
+env:
+  resourceGroupName: 'rg-blog-dev-001'
+  resourceGroupRegion: 'westeurope'   
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: azure/login@v1
+      name: Azure Login
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - uses: Azure/cli@v1.0.0
+      name: Create resource Group 
+      with:  
+        inlineScript: |
+          az group create -l ${{ env.resourceGroupRegion }} -n ${{ env.resourceGroupName }}
+    - uses: azure/arm-deploy@v1
+      name: Deploy ARM Template
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        resourceGroupName: ${{ env.resourceGroupName }}
+        template: ./infrastructure/azuredeploy.json
+        parameters: ./infrastructure/azuredeploy.parameters.json repositoryToken=${{ secrets.PAT_FOR_AZURE_STATIC_WEBAPPS }}
+        deploymentName: mytechramblings-deployment
+    - uses: Azure/cli@v1.0.0
+      name: Set WebApp hostname 
+      with:  
+        inlineScript: |
+          az staticwebapp hostname set -n mytechramblings-blog --hostname www.mytechramblings.tk
+

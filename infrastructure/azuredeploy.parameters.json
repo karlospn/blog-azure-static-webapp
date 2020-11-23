@@ -1,0 +1,43 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "mytechramblings-blog"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "sku": {
+            "value": "Free"
+        },
+        "skucode": {
+            "value": "Free"
+        },
+        "repositoryUrl": {
+            "value": "https://github.com/karlospn/dotnetramblings_source"
+        },
+        "branch": {
+            "value": "feature/azure-static-webapp"
+        },
+        "repositoryToken": {
+            "value": "" 
+        },
+        "appLocation": {
+            "value": "/"
+        },
+        "apiLocation": {
+            "value": ""
+        },
+        "appArtifactLocation": {
+            "value": "public"
+        },
+        "resourceTags": {
+            "value": {
+                "Environment": "Dev",
+                "Project": "personal-blog",
+                "ApplicationName": "mytechramblings-blog"
+            }
+        }
+    }
+}
