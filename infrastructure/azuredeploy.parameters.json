@@ -15,10 +15,10 @@
             "value": "Free"
         },
         "repositoryUrl": {
-            "value": "https://github.com/karlospn/dotnetramblings_source"
+            "value": "https://github.com/karlospn/blog-azure-static-webapp"
         },
         "branch": {
-            "value": "feature/azure-static-webapp"
+            "value": "main"
         },
         "repositoryToken": {
             "value": "" 
