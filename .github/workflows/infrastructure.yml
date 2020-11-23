@@ -27,9 +27,3 @@ jobs:
         template: ./infrastructure/azuredeploy.json
         parameters: ./infrastructure/azuredeploy.parameters.json repositoryToken=${{ secrets.PAT_FOR_AZURE_STATIC_WEBAPPS }}
         deploymentName: mytechramblings-deployment
-    - uses: Azure/cli@v1.0.0
-      name: Set WebApp hostname 
-      with:  
-        inlineScript: |
-          az staticwebapp hostname set -n mytechramblings-blog --hostname www.mytechramblings.tk
-
