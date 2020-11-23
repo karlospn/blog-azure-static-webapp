@@ -34,9 +34,9 @@
         },
         "resourceTags": {
             "value": {
-                "Environment": "Dev",
+                "Environment": "Development",
                 "Project": "personal-blog",
-                "ApplicationName": "mytechramblings-blog"
+                "ApplicationName": "mytechramblings"
             }
         }
     }
