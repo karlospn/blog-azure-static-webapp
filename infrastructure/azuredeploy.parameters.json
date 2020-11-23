@@ -18,7 +18,7 @@
             "value": "https://github.com/karlospn/blog-azure-static-webapp"
         },
         "branch": {
-            "value": "main"
+            "value": "master"
         },
         "repositoryToken": {
             "value": "" 
